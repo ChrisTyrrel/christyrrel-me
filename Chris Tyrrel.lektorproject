@@ -1,5 +1,6 @@
 [project]
 name = Chris Tyrrel
 
-[servers.ghpages]
-target = ghpages://ChrisTyrrel/christyrrel.github.io
+[servers.alpha]
+name = Chris Tyrrel
+target = ghpages+https://ChrisTyrrel/christyrrel-me?cname=alpha.christyrrel.me
