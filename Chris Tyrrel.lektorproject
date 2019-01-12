@@ -1,0 +1,5 @@
+[project]
+name = Chris Tyrrel
+
+[servers.ghpages]
+target = ghpages://ChrisTyrrel/christyrrel.github.io
