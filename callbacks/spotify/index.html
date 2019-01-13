@@ -18,7 +18,7 @@
             
               <li class="nav-item" ><a class="nav-link" href="../../callbacks/"></a></li>
             
-              <li class="nav-item" ><a class="nav-link" href="../../about/">About this Website</a></li>
+              <li class="nav-item" ><a class="nav-link" href="../../about/">About Me</a></li>
             
               <li class="nav-item" ><a class="nav-link" href="../../projects/">Projects</a></li>
             
@@ -36,26 +36,26 @@
 <p id="code"></p>
 <p id="state"></p>
 <script>
-let urlParams = new URLSearchParams(window.location.search);
-//let acodeParam = urlParams.get('code');
-var authElement = document.getElementById("code");
-var stateElement = document.getElementById("state");
+  let urlParams = new URLSearchParams(window.location.search);
+  //let acodeParam = urlParams.get('code');
+  var authElement = document.getElementById("code");
+  var stateElement = document.getElementById("state");
 
-if (urlParams.has('error')) {
-  var errorElement = document.createElement('h4');
-  errorElement.setAttribute('class', 'text-danger');
-  var errorMessage = document.createTextNode("Spotify API has returned an error: " + urlParams.get('error'));
-  errorElement.appendChild(errorMessage);
-  document.body.appendChild(errorElement);
-} else if (urlParams.has('code') || urlParams.has('state')) {
-  authElement.textContent += "Authorization code: " + urlParams.get('code');
-  stateElement.textContent += "State: " + urlParams.get('state');
-  console.log(urlParams.get('code'));
-  console.log(urlParams.get('state'));
-} else {
-  authElement.textcontent += "None provided.";
-  stateElement.textcontent += "None provided.";
-}
+  if (urlParams.has('error')) {
+    var errorElement = document.createElement('h4');
+    errorElement.setAttribute('class', 'text-danger');
+    var errorMessage = document.createTextNode("Spotify API has returned an error: " + urlParams.get('error'));
+    errorElement.appendChild(errorMessage);
+    document.body.appendChild(errorElement);
+  } else if (urlParams.has('code') || urlParams.has('state')) {
+    authElement.textContent += "Authorization code: " + urlParams.get('code');
+    stateElement.textContent += "State: " + urlParams.get('state');
+    console.log(urlParams.get('code'));
+    console.log(urlParams.get('state'));
+  } else {
+    authElement.textcontent += "None provided.";
+    stateElement.textcontent += "None provided.";
+  }
 </script>
 
     </div>
