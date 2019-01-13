@@ -6,6 +6,4 @@ cache:
     - $HOME/.cache/lektor/builds
 install: "pip install Lektor"
 script: "lektor build"
-deploy:
-  provider: script
-  script: "lektor deploy alpha"
+script: "lektor deploy alpha"
