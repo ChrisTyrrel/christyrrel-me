@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../static/bootstrap.css">
+    <title>Spotify Callback — Chris Tyrrel</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../../">Chris Tyrrel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            
+              <li class="nav-item" ><a class="nav-link" href="../../callbacks/"></a></li>
+            
+              <li class="nav-item" ><a class="nav-link" href="../../about/">About this Website</a></li>
+            
+              <li class="nav-item" ><a class="nav-link" href="../../projects/">Projects</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      
+  <h2>Spotify Callback</h2>
+  
+  <small>This webpage serves as a callback for Spotify API Authorization requests and does not store any data.</small>
+<br><br>
+
+<p id="code"></p>
+<p id="state"></p>
+<script>
+let urlParams = new URLSearchParams(window.location.search);
+//let acodeParam = urlParams.get('code');
+var authElement = document.getElementById("code");
+var stateElement = document.getElementById("state");
+
+if (urlParams.has('error')) {
+  var errorElement = document.createElement('h4');
+  errorElement.setAttribute('class', 'text-danger');
+  var errorMessage = document.createTextNode("Spotify API has returned an error: " + urlParams.get('error'));
+  errorElement.appendChild(errorMessage);
+  document.body.appendChild(errorElement);
+} else if (urlParams.has('code') || urlParams.has('state')) {
+  authElement.textContent += "Authorization code: " + urlParams.get('code');
+  stateElement.textContent += "State: " + urlParams.get('state');
+  console.log(urlParams.get('code'));
+  console.log(urlParams.get('state'));
+} else {
+  authElement.textcontent += "None provided.";
+  stateElement.textcontent += "None provided.";
+}
+</script>
+
+    </div>
+      <footer>
+        &copy; Copyright 2019 - Chris Tyrrel
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
